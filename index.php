@@ -3,7 +3,7 @@
 
  <?php
       
-  include_once ("pdo.php");
+  include_once ("control/pdo.php");
 
     ?>
 
@@ -11,12 +11,12 @@
 
 <head>
 
-    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/FontAwesome.otf">
-    <link rel="stylesheet" href="css/bootstrap.css"/>
-    <link rel="stylesheet" href="css/carousel.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" href="css/register-style.css"/>
+    <link rel="stylesheet" href="vue/css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="vue/css/FontAwesome.otf">
+    <link rel="stylesheet" href="vue/css/bootstrap.css"/>
+    <link rel="stylesheet" href="vue/css/carousel.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" href="vue/css/register-style.css"/>
     <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
     <meta charset='utf-8'/>
@@ -108,7 +108,7 @@
                                     <a href="#" class="right btn btn-tw"><i class="fa fa-twitter"></i>Google</a>
                                 </div>
                                 <span style="display: block" class="text-center">ou</span>
-                                 <form class="form" role="form" method="post" action="php/beephp_register.php" accept-charset="UTF-8" id="login-nav">
+                                 <form class="form" role="form" method="post" action="control/sol_register.php" accept-charset="UTF-8" id="login-nav">
                                         <div class="form-group">
                                              <label class="sr-only" for="exampleInputEmail2">Adresse email</label>
                                              <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
@@ -176,7 +176,7 @@
 			<div class="row main">
 				<div class="main-login main-center">
 				<h5>Inscrivez-vous pour créer, modifier des article et des commentaires.</h5>
-					<form class="" method="post" action="php/beephp_register.php">
+					<form class="" method="post" action="control/sol_register.php">
 
 						<div class="form-group">
 							<label for="prenom" class="cols-sm-2 control-label">Votre nom</label>
@@ -240,19 +240,19 @@
 		$dbh = new PDO('mysql:host=localhost;dbname=mathieuc', "mathieuc", "U9YDV9eNf5", [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"]);
 
 			if (empty($_GET)) {
-				include "php/beephp-accueil.php";
+				include "control/sol-accueil.php";
 			}
 			else if (isset($_GET["categorie_page"])) {
 
-				include "php/categories.php";
+				include "control/categories.php";
 			}
 			else if (isset($_GET["categorie"])) {
 
-				include "php/categorie_generation.php";
+				include "control/categorie_generation.php";
 			}
 		?>
-		<form action='php/article.php' method="post">
-			<a type='button' id='new_article' href='php/article.php'>Nouvel Article</a>
+		<form action='control/article.php' method="post">
+			<a type='button' id='new_article' href='control/article.php'>Nouvel Article</a>
 		</form>
 		
 		</div>

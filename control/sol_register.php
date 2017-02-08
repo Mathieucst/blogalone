@@ -24,12 +24,12 @@ catch(PDOException $e) {
     $mail = $form[ 'mail' ];
 
 //On les insère dans le tableau
-    $register = "INSERT INTO membres (id_membre, nom, prenom, login, m_passe, mail) VALUES (:id_membre, :nom, :prenom, :login, :m_passe, :mail)";
+    $register = "INSERT INTO mbs (id_membre, nom, login, m_passe, mail) VALUES (:id_membre, :nom, :login, :m_passe, :mail)";
 
 //On les prépare
-    $query = $dbh->prepare( $register );
+    $query = $dbh->prepare( $mbs );
 // On les exécute
-    $query->execute( array( ':id_membre'=>$id_membre, ':nom'=>$nom, ':prenom'=>$prenom, ':login'=>$login, ':m_p'=>$m_p, ':mail'=>$mail ) );
+    $query->execute( array( ':id_membre'=>$id_membre, ':nom'=>$nom, ':login'=>$login, ':m_p'=>$m_p, ':mail'=>$mail ) );
 
 
     header('Location: ../index.php');
